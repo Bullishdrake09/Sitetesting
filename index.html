@@ -5,134 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prijzen iPhone Scherm Reparatie</title>
   <style>
-    /* Algemene basisstijl */
     body {
       font-family: Arial, sans-serif;
       background: #1e1e1e;
       color: #f5f5f5;
-      padding: 20px;
       margin: 0;
+      padding: 20px;
     }
     h1 {
       text-align: center;
       color: #ff9800;
+      margin-bottom: 30px;
     }
-    /* Tabel styling */
+    .table-container {
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      border-radius: 8px;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      background: #272727;
     }
     th, td {
-      padding: 10px;
-      border: 1px solid #444;
+      padding: 12px 15px;
       text-align: center;
+      border-bottom: 1px solid #444;
     }
     th {
       background-color: #333;
       color: #ff9800;
+      font-size: 16px;
     }
     td {
-      background-color: #272727;
+      font-size: 14px;
     }
-    /* Responsive tabel: op kleinere schermen */
+    tr:nth-child(even) td {
+      background-color: #2a2a2a;
+    }
+    tr:hover td {
+      background-color: #3a3a3a;
+    }
     @media (max-width: 768px) {
       table, thead, tbody, th, td, tr {
         display: block;
       }
-      th {
-        position: sticky;
-        top: 0;
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #444;
+        border-radius: 8px;
+        overflow: hidden;
       }
       td {
-        text-align: right;
-        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #444;
         position: relative;
-      }
-      td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        width: 45%;
+        padding-left: 50%;
         text-align: left;
-        font-weight: bold;
       }
+      td:before {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #ff9800;
+      }
+      td:nth-of-type(1):before { content: "iPhone Model"; }
+      td:nth-of-type(2):before { content: "Hard OLED"; }
+      td:nth-of-type(3):before { content: "Soft OLED"; }
+      td:nth-of-type(4):before { content: "LCD / OEM"; }
     }
   </style>
 </head>
 <body>
   <h1>Prijzen iPhone Scherm Reparatie</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>iPhone Model</th>
-        <th>Hard OLED</th>
-        <th>Soft OLED</th>
-        <th>LCD / OEM</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-label="iPhone Model">iPhone 6</td>
-        <td data-label="Hard OLED">n.v.t.</td>
-        <td data-label="Soft OLED">n.v.t.</td>
-        <td data-label="LCD / OEM">€80</td>
-      </tr>
-      <tr>
-        <td data-label="iPhone Model">iPhone 7</td>
-        <td data-label="Hard OLED">n.v.t.</td>
-        <td data-label="Soft OLED">n.v.t.</td>
-        <td data-label="LCD / OEM">€85</td>
-      </tr>
-      <tr>
-        <td data-label="iPhone Model">iPhone 8</td>
-        <td data-label="Hard OLED">n.v.t.</td>
-        <td data-label="Soft OLED">n.v.t.</td>
-        <td data-label="LCD / OEM">€90</td>
-      </tr>
-      <tr>
-        <td data-label="iPhone Model">iPhone X</td>
-        <td data-label="Hard OLED">€155</td>
-        <td data-label="Soft OLED">€165</td>
-        <td data-label="LCD / OEM">€185</td>
-      </tr>
-      <tr>
-        <td data-label="iPhone Model">iPhone 11</td>
-        <td data-label="Hard OLED">n.v.t.</td>
-        <td data-label="Soft OLED">n.v.t.</td>
-        <td data-label="LCD / OEM">€95</td>
-      </tr>
-      <tr>
-        <td data-label="iPhone Model">iPhone 12</td>
-        <td data-label="Hard OLED">€135</td>
-        <td data-label="Soft OLED">€145</td>
-        <td data-label="LCD / OEM">€155</td>
-      </tr>
-      <tr>
-        <td data-label="iPhone Model">iPhone 13</td>
-        <td data-label="Hard OLED">€140</td>
-        <td data-label="Soft OLED">€150</td>
-        <td data-label="LCD / OEM">€160</td>
-      </tr>
-      <tr>
-        <td data-label="iPhone Model">iPhone 14</td>
-        <td data-label="Hard OLED">€145</td>
-        <td data-label="Soft OLED">€155</td>
-        <td data-label="LCD / OEM">€165</td>
-      </tr>
-      <tr>
-        <td data-label="iPhone Model">iPhone 15</td>
-        <td data-label="Hard OLED">€150</td>
-        <td data-label="Soft OLED">€160</td>
-        <td data-label="LCD / OEM">€170</td>
-      </tr>
-      <tr>
-        <td data-label="iPhone Model">iPhone 16</td>
-        <td data-label="Hard OLED">€155</td>
-        <td data-label="Soft OLED">€165</td>
-        <td data-label="LCD / OEM">€175</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>iPhone Model</th>
+          <th>Hard OLED</th>
+          <th>Soft OLED</th>
+          <th>LCD / OEM</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>iPhone 6</td>
+          <td>n.v.t.</td>
+          <td>n.v.t.</td>
+          <td>€80</td>
+        </tr>
+        <tr>
+          <td>iPhone 7</td>
+          <td>n.v.t.</td>
+          <td>n.v.t.</td>
+          <td>€85</td>
+        </tr>
+        <tr>
+          <td>iPhone 8</td>
+          <td>n.v.t.</td>
+          <td>n.v.t.</td>
+          <td>€90</td>
+        </tr>
+        <tr>
+          <td>iPhone X</td>
+          <td>€155</td>
+          <td>€165</td>
+          <td>€185</td>
+        </tr>
+        <tr>
+          <td>iPhone 11</td>
+          <td>n.v.t.</td>
+          <td>n.v.t.</td>
+          <td>€95</td>
+        </tr>
+        <tr>
+          <td>iPhone 12</td>
+          <td>€135</td>
+          <td>€145</td>
+          <td>€155</td>
+        </tr>
+        <tr>
+          <td>iPhone 13</td>
+          <td>€140</td>
+          <td>€150</td>
+          <td>€160</td>
+        </tr>
+        <tr>
+          <td>iPhone 14</td>
+          <td>€145</td>
+          <td>€155</td>
+          <td>€165</td>
+        </tr>
+        <tr>
+          <td>iPhone 15</td>
+          <td>€150</td>
+          <td>€160</td>
+          <td>€170</td>
+        </tr>
+        <tr>
+          <td>iPhone 16</td>
+          <td>€155</td>
+          <td>€165</td>
+          <td>€175</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
